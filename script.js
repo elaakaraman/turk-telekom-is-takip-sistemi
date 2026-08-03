@@ -1,13 +1,19 @@
-alert("Script çalıştı");
+// =========================
+// VERİLER
+// =========================
+
 let projeVerileri = [];
 let binaVerileri = [];
 
-// PROJE EXCELİ
+// =========================
+// PROJE EXCELİNİ OKU
+// =========================
+
 document.getElementById("projeExcel").addEventListener("change", function (e) {
 
-    const file = e.target.files[0];
+    const dosya = e.target.files[0];
 
-    if (!file) return;
+    if (!dosya) return;
 
     const reader = new FileReader();
 
@@ -15,7 +21,9 @@ document.getElementById("projeExcel").addEventListener("change", function (e) {
 
         const data = new Uint8Array(event.target.result);
 
-        const workbook = XLSX.read(data, { type: "array" });
+        const workbook = XLSX.read(data, {
+            type: "array"
+        });
 
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
@@ -25,16 +33,19 @@ document.getElementById("projeExcel").addEventListener("change", function (e) {
 
     };
 
-    reader.readAsArrayBuffer(file);
+    reader.readAsArrayBuffer(dosya);
 
 });
 
-// BİNA EXCELİ
+// =========================
+// BİNA EXCELİNİ OKU
+// =========================
+
 document.getElementById("binaExcel").addEventListener("change", function (e) {
 
-    const file = e.target.files[0];
+    const dosya = e.target.files[0];
 
-    if (!file) return;
+    if (!dosya) return;
 
     const reader = new FileReader();
 
@@ -42,7 +53,9 @@ document.getElementById("binaExcel").addEventListener("change", function (e) {
 
         const data = new Uint8Array(event.target.result);
 
-        const workbook = XLSX.read(data, { type: "array" });
+        const workbook = XLSX.read(data, {
+            type: "array"
+        });
 
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
@@ -52,9 +65,13 @@ document.getElementById("binaExcel").addEventListener("change", function (e) {
 
     };
 
-    reader.readAsArrayBuffer(file);
+    reader.readAsArrayBuffer(dosya);
 
 });
+// =========================
+// ARAMA
+// =========================
+
 function ara() {
 
     const aranan = document.getElementById("arama").value.trim();
@@ -69,12 +86,15 @@ function ara() {
 
     }
 
-    let binaKaydi = binaVerileri.find(veri =>
-        String(veri.ES_BINA_KODU) === aranan ||
-        String(veri.CIZIM_ID) === aranan
-    );
+    // Önce Bina Excelinde ara
+    const binaKaydi = binaVerileri.find(function(veri){
 
-    if (!binaKaydi) {
+        return String(veri.ES_BINA_KODU) === aranan ||
+               String(veri.CIZIM_ID) === aranan;
+
+    });
+
+    if (!binaKaydi){
 
         sonucAlani.innerHTML = "<h3>Kayıt bulunamadı.</h3>";
 
@@ -82,56 +102,43 @@ function ara() {
 
     }
 
-    let projeKaydi = projeVerileri.find(veri =>
-        String(veri.CIZIM_ID) === String(binaKaydi.CIZIM_ID)
-    );
+    // Proje Excelinde aynı Çizim ID'yi bul
+    const projeKaydi = projeVerileri.find(function(veri){
+
+        return String(veri.CIZIM_ID) === String(binaKaydi.CIZIM_ID);
+
+    });
 
     sonucAlani.innerHTML = `
-        <div class="proje-karti">
+    <div class="proje-karti">
 
         <h2>Bina Bilgileri</h2>
 
-        <p><b>Bina ID :</b> ${binaKaydi.ES_BINA_KODU}</p>
+        <p><strong>Bina ID:</strong> ${binaKaydi.ES_BINA_KODU}</p>
 
-        <p><b>Çizim ID :</b> ${binaKaydi.CIZIM_ID}</p>
+        <p><strong>Çizim ID:</strong> ${binaKaydi.CIZIM_ID}</p>
 
-        <p><b>Santral :</b> ${binaKaydi.SANTRAL_ADI}</p>
+        <p><strong>Santral:</strong> ${binaKaydi.SANTRAL_ADI}</p>
 
-        <p><b>Çizim Adı :</b> ${binaKaydi.CIZIM_ADI}</p>
+        <p><strong>Çizim Adı:</strong> ${binaKaydi.CIZIM_ADI}</p>
 
-        <p><b>BBK :</b> ${binaKaydi.BBK}</p>
+        <p><strong>BBK:</strong> ${binaKaydi.BBK}</p>
 
         <hr>
 
         <h2>Proje Bilgileri</h2>
 
-        <p><b>Proje Yılı :</b> ${projeKaydi?.PROJE_YILI ?? "-"}</p>
+        <p><strong>Proje Yılı:</strong> ${projeKaydi ? projeKaydi.PROJE_YILI : "-"}</p>
 
-        <p><b>Proje Özelliği :</b> ${projeKaydi?.PROJE_OZELLIGI ?? "-"}</p>
+        <p><strong>Proje Özelliği:</strong> ${projeKaydi ? projeKaydi.PROJE_OZELLIGI : "-"}</p>
 
-        <p><b>Onay Durumu :</b> ${projeKaydi?.CIZIM_ONAY_DURUMU ?? "-"}</p>
+        <p><strong>Onay Durumu:</strong> ${projeKaydi ? projeKaydi.CIZIM_ONAY_DURUMU : "-"}</p>
 
-        <p><b>Toplam Bütçe :</b> ${projeKaydi?.TOPLAM_BUTCE ?? "-"}</p>
+        <p><strong>Toplam Bütçe:</strong> ${projeKaydi ? projeKaydi.TOPLAM_BUTCE : "-"}</p>
 
-        <p><b>FiberNet HP :</b> ${projeKaydi?.FIBERNET_HP ?? "-"}</p>
+        <p><strong>FiberNet HP:</strong> ${projeKaydi ? projeKaydi.FIBERNET_HP : "-"}</p>
 
-        </div>
+    </div>
     `;
-
-}
-function araBina() {
-    ara();
-}
-
-function araCizim() {
-    ara();
-}
-
-function temizle() {
-
-    document.getElementById("arama").value = "";
-
-    document.getElementById("sonucAlani").innerHTML =
-    "<p>Henüz arama yapılmadı.</p>";
 
 }
