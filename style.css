@@ -61,3 +61,146 @@ main{
     margin:30px auto;
 
 }
+/* ========================= */
+/* ARAMA ALANI */
+/* ========================= */
+
+.arama-alani{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
+    margin-bottom:25px;
+
+}
+
+.arama-alani h2{
+
+    margin-bottom:10px;
+
+    color:#0099cc;
+
+}
+
+.arama-alani input[type="text"]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    margin-bottom:15px;
+
+    font-size:16px;
+
+}
+
+.arama-alani input[type="file"]{
+
+    margin-bottom:20px;
+
+}
+
+.arama-alani button{
+
+    background:#0099cc;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    margin-right:10px;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+}
+
+.arama-alani button:hover{
+
+    background:#0077aa;
+
+}
+/* ========================= */
+/* SONUÇ KARTLARI */
+/* ========================= */
+
+#sonucAlani,
+#cizimler{
+
+    background:white;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
+
+.proje-karti{
+
+    border-left:6px solid #0099cc;
+
+    background:#f9f9f9;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    border-radius:8px;
+
+}
+
+.proje-karti h2{
+
+    color:#0099cc;
+
+    margin-bottom:15px;
+
+}
+
+.proje-karti p{
+
+    margin:8px 0;
+
+    font-size:16px;
+
+}
+
+hr{
+
+    margin:20px 0;
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:30px;
+
+    background
