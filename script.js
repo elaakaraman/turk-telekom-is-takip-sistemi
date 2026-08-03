@@ -1,3 +1,4 @@
+alert("Script çalıştı");
 let projeVerileri = [];
 let binaVerileri = [];
 
