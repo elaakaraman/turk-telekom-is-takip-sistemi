@@ -11,9 +11,38 @@
 
 <body>
 
-    <h1>Türk Telekom İş Takip Sistemi</h1>
+    <header>
+        <h1>Türk Telekom İş Takip Sistemi</h1>
+        <p>Proje ve bina bilgilerini görüntüleme sistemi</p>
+    </header>
 
-    <p>Proje ve bina bilgilerini görüntüleme sistemi</p>
+    <main>
+
+        <section class="arama-alani">
+
+            <h2>Bina ID ile Proje Ara</h2>
+
+            <input
+                type="text"
+                id="binaId"
+                placeholder="Bina ID giriniz"
+            >
+
+            <button onclick="binaAra()">
+                Ara
+            </button>
+
+        </section>
+
+        <section id="sonucAlani">
+
+            <p>
+                Bina ID girerek ilgili projeleri görüntüleyebilirsiniz.
+            </p>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 
