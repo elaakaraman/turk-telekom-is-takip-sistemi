@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türk Telekom İş Takip Sistemi</title>
 
-    <title>Türk Telekom İş Takip Sistemi</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
 
 <body>
 
-    <header>
-        <h1>Türk Telekom İş Takip Sistemi</h1>
-        <p>Proje ve bina bilgilerini görüntüleme sistemi</p>
-    </header>
+<header>
+<h1>Türk Telekom İş Takip Sistemi</h1>
+<p>Excel verilerini okuyarak bina ve çizim bilgilerini görüntüler.</p>
+</header>
 
-    <main>
+<main>
 
-        <section class="arama-alani">
-            <h3>Excel Dosyası Yükle</h3>
+<section class="arama-alani">
+
+<h2>Proje Exceli</h2>
 
 <input
-    type="file"
-    id="excelDosyasi"
-    accept=".xlsx, .xls"
->
+type="file"
+id="projeExcel"
+accept=".xlsx,.xls">
 
-            <h2>Bina ID ile Proje Ara</h2>
+<br><br>
 
-            <input
-                type="text"
-                id="binaId"
-                placeholder="Bina ID giriniz"
-            >
+<h2>Bina Exceli</h2>
 
-            <button onclick="binaAra()">
-                Ara
-            </button>
+<input
+type="file"
+id="binaExcel"
+accept=".xlsx,.xls">
 
-        </section>
+<br><br>
 
-        <section id="sonucAlani">
+<h2>Bina ID / Çizim ID Ara</h2>
 
-            <p>
-                Bina ID girerek ilgili projeleri görüntüleyebilirsiniz.
-            </p>
+<input
+type="text"
+id="arama"
+placeholder="Bina ID veya Çizim ID giriniz">
 
-        </section>
+<button onclick="ara()">
+Ara
+</button>
 
-    </main>
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</section>
 
-    <script src="script.js"></script>
+<section id="sonucAlani">
+
+<p>
+Henüz arama yapılmadı.
+</p>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
 </html>
