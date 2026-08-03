@@ -164,3 +164,52 @@ function araBina() {
     });
 
 }
+// =====================================
+// ÇİZİM ID İLE ARAMA
+// =====================================
+
+function araCizim() {
+
+    const aranan = document.getElementById("arama").value.trim();
+
+    const sonucAlani = document.getElementById("sonucAlani");
+
+    const bina = binaVerileri.find(function(veri){
+
+        return String(veri.CIZIM_ID) === aranan;
+
+    });
+
+    if (!bina){
+
+        sonucAlani.innerHTML = "<h2>Sonuçlar</h2><p>Çizim bulunamadı.</p>";
+
+        return;
+
+    }
+
+    document.getElementById("arama").value = bina.ES_BINA_KODU;
+
+    araBina();
+
+}
+
+// =====================================
+// TEMİZLE
+// =====================================
+
+function temizle(){
+
+    document.getElementById("arama").value="";
+
+    document.getElementById("sonucAlani").innerHTML=`
+        <h2>Sonuçlar</h2>
+        <p>Henüz arama yapılmadı.</p>
+    `;
+
+    document.getElementById("cizimler").innerHTML=`
+        <h2>Aynı Binaya Ait Çizimler</h2>
+        <p>Henüz liste oluşturulmadı.</p>
+    `;
+
+}
