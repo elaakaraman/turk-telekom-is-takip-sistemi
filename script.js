@@ -119,3 +119,19 @@ function ara() {
     `;
 
 }
+function araBina() {
+    ara();
+}
+
+function araCizim() {
+    ara();
+}
+
+function temizle() {
+
+    document.getElementById("arama").value = "";
+
+    document.getElementById("sonucAlani").innerHTML =
+    "<p>Henüz arama yapılmadı.</p>";
+
+}
