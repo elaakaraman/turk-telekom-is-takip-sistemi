@@ -1,19 +1,81 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #f7f2fb;
     text-align: center;
+    color: #4b3b5c;
 }
 
-h1 {
-    background-color: #00a1e0;
+header {
+    background: linear-gradient(135deg, #cdb4db, #9b72aa);
     color: white;
-    margin: 0;
-    padding: 30px;
+    padding: 35px 15px;
+    box-shadow: 0 4px 12px rgba(120, 80, 140, 0.25);
 }
 
-p {
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 12px;
     font-size: 18px;
-    color: #333;
-    margin-top: 30px;
+}
+
+main {
+    padding: 45px 20px;
+}
+
+.arama-alani {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(130, 90, 150, 0.18);
+}
+
+.arama-alani h2 {
+    color: #7b4f8e;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 250px;
+    padding: 13px;
+    border: 2px solid #d8c2e2;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #9b72aa;
+}
+
+button {
+    padding: 13px 28px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8e5ea2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #744584;
+}
+
+#sonucAlani {
+    background-color: #eee3f4;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    color: #5d456b;
+    font-size: 17px;
 }
