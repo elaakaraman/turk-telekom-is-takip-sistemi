@@ -1,76 +1,125 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Türk Telekom İş Takip Sistemi</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
 
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BeautyBase | Güzelliğini Keşfet</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-<h1>Türk Telekom İş Takip Sistemi</h1>
-<p>Excel verilerini okuyarak bina ve çizim bilgilerini görüntüler.</p>
-</header>
+    <!-- HEADER -->
 
-<main>
+    <header>
 
-<section class="arama-alani">
+        <div class="logo">
 
-<h2>Proje Exceli</h2>
+            🌸 BeautyBase
 
-<input
-type="file"
-id="projeExcel"
-accept=".xlsx,.xls">
+        </div>
 
-<br><br>
+        <nav>
 
-<h2>Bina Exceli</h2>
+            <a href="#">Ana Sayfa</a>
 
-<input
-type="file"
-id="binaExcel"
-accept=".xlsx,.xls">
+            <a href="#">Ürünler</a>
 
-<br><br>
+            <a href="#">Favoriler</a>
 
-<h2>Bina ID / Çizim ID Ara</h2>
+            <a href="#">Hakkımızda</a>
 
-<input
-type="text"
-id="arama"
-placeholder="Bina ID veya Çizim ID giriniz">
+            <a href="#">İletişim</a>
 
-<button onclick="araBina()">
-Bina ID Ara
-</button>
+        </nav>
 
-<button onclick="araCizim()">
-Çizim ID Ara
-</button>
+    </header>
 
-<button onclick="temizle()">
-Temizle
-</button>
 
-</section>
+    <!-- HERO -->
 
-<section id="sonucAlani">
+    <section class="hero">
 
-<p>
-Henüz arama yapılmadı.
-</p>
+        <div class="hero-yazi">
 
-</section>
+            <h1>
 
-</main>
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-<script src="script.js?v=1"></script>
+                Güzelliğini Keşfet 💖
+
+            </h1>
+
+            <p>
+
+                Dünyanın en sevilen makyaj ürünlerini keşfet.
+
+            </p>
+
+            <button>
+
+                💄 Ürünleri Keşfet
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ARAMA -->
+
+    <section class="arama">
+
+        <input
+
+            type="text"
+
+            id="arama"
+
+            placeholder="🔍 Ürün veya marka ara...">
+
+    </section>
+
+
+    <!-- KATEGORİLER -->
+
+    <section class="kategoriler">
+
+        <button>Dudak 💋</button>
+
+        <button>Göz 👁️</button>
+
+        <button>Yüz 😊</button>
+
+        <button>Tırnak 💅</button>
+
+        <button>Cilt 🧴</button>
+
+    </section>
+
+
+    <!-- ÜRÜNLER -->
+
+    <section id="urunler">
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 BeautyBase | Tüm Hakları Saklıdır 🌸
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
