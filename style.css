@@ -1,206 +1,177 @@
-/* ========================= */
-/* GENEL */
-/* ========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-
-    font-family:Arial, Helvetica, sans-serif;
-
-    background:#f4f6f9;
-
+    background:#fff5fa;
     color:#333;
-
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
 
 header{
-
-    background:#0099cc;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#ff69b4;
     color:white;
+    position:sticky;
+    top:0;
+}
 
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffe4f2;
+}
+
+/* HERO */
+
+.hero{
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-
-    padding:25px;
-
+    background:linear-gradient(135deg,#ffd6e8,#ffeef6);
 }
 
-header h1{
-
-    margin-bottom:10px;
-
-    font-size:32px;
-
+.hero h1{
+    font-size:55px;
+    color:#ff4f9a;
 }
 
-header p{
-
-    font-size:18px;
-
-}
-
-/* ========================= */
-/* MAIN */
-/* ========================= */
-
-main{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:30px auto;
-
-}
-/* ========================= */
-/* ARAMA ALANI */
-/* ========================= */
-
-.arama-alani{
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:10px;
-
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-
-    margin-bottom:25px;
-
-}
-
-.arama-alani h2{
-
-    margin-bottom:10px;
-
-    color:#0099cc;
-
-}
-
-.arama-alani input[type="text"]{
-
-    width:100%;
-
-    padding:12px;
-
-    border:1px solid #ccc;
-
-    border-radius:6px;
-
-    margin-bottom:15px;
-
-    font-size:16px;
-
-}
-
-.arama-alani input[type="file"]{
-
-    margin-bottom:20px;
-
-}
-
-.arama-alani button{
-
-    background:#0099cc;
-
-    color:white;
-
-    border:none;
-
-    padding:12px 20px;
-
-    border-radius:6px;
-
-    cursor:pointer;
-
-    margin-right:10px;
-
-    margin-top:10px;
-
-    font-size:15px;
-
-}
-
-.arama-alani button:hover{
-
-    background:#0077aa;
-
-}
-/* ========================= */
-/* SONUÇ KARTLARI */
-/* ========================= */
-
-#sonucAlani,
-#cizimler{
-
-    background:white;
-
-    padding:25px;
-
-    margin-top:25px;
-
-    border-radius:10px;
-
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-
-}
-
-.proje-karti{
-
-    border-left:6px solid #0099cc;
-
-    background:#f9f9f9;
-
-    padding:20px;
-
-    margin-top:20px;
-
-    border-radius:8px;
-
-}
-
-.proje-karti h2{
-
-    color:#0099cc;
-
-    margin-bottom:15px;
-
-}
-
-.proje-karti p{
-
-    margin:8px 0;
-
-    font-size:16px;
-
-}
-
-hr{
-
+.hero p{
+    font-size:20px;
     margin:20px 0;
-
 }
 
-/* ========================= */
+.hero button{
+    background:#ff4f9a;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.hero button:hover{
+    background:#e63d87;
+}
+
+/* ARAMA */
+
+.arama{
+    width:90%;
+    margin:40px auto;
+}
+
+#arama{
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:2px solid #ffb6d9;
+    font-size:17px;
+}
+
+/* KATEGORİLER */
+
+.kategoriler{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.kategoriler button{
+    background:#ff69b4;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.kategoriler button:hover{
+    background:#ff4f9a;
+}
+
+/* ÜRÜNLER */
+
+#urunler{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding-bottom:50px;
+}
+
+.urun-kart{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.urun-kart:hover{
+    transform:translateY(-8px);
+}
+
+.urun-kart img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.urun-bilgi{
+    padding:18px;
+}
+
+.urun-bilgi h2{
+    color:#ff4f9a;
+    margin-bottom:10px;
+}
+
+.fiyat{
+    font-size:22px;
+    color:#ff4f9a;
+    font-weight:bold;
+}
+
+.detay-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#ff69b4;
+    color:white;
+    cursor:pointer;
+}
+
 /* FOOTER */
-/* ========================= */
 
 footer{
-
+    background:#ff69b4;
+    color:white;
     text-align:center;
-
     padding:20px;
-
-    margin-top:30px;
-
-    background
+}
